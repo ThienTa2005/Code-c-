@@ -1,3 +1,4 @@
+Cách 1:
 #include<bits/stdc++.h> 
 using namespace std ; 
 int main() { 
@@ -23,4 +24,31 @@ int main() {
         } 
         cnt <= k ? cout << "1\n" : cout << "0\n" ; 
     } 
+}
+Cách 2: 
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main (){
+    int n; 
+    cin >> n;
+    cin.ignore();
+    while(n--){
+        map <char ,int> m;
+        string s;
+        cin>>s;
+        int t;
+        cin>>t; cin.ignore();
+
+        for(char x:s){
+            m[x]++;
+        }
+        int count=0;
+        for(char x='a';x<='z';x++){
+            if(m[x]>=1) count++;
+        }
+        if(26-count<=t) cout<<1;
+        else cout<<0;
+        cout<<endl;
+    }
 }
